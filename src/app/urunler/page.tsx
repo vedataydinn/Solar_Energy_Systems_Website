@@ -129,10 +129,10 @@ export default function Urunler() {
 
       {/* Ürünler Grid */}
       <div className="max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {urunler.map((urun) => (
             <div key={urun.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-64">
+              <div className="relative h-48 md:h-64">
                 <Image
                   src={urun.image}
                   alt={urun.title}
@@ -140,24 +140,24 @@ export default function Urunler() {
                   style={{ objectFit: 'cover' }}
                 />
               </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-bold text-gray-800 mb-3">{urun.title}</h2>
-                <p className="text-gray-600 mb-4">{urun.description}</p>
+              <div className="p-4 md:p-6">
+                <h2 className="text-lg md:text-2xl font-bold text-gray-800 mb-2">{urun.title}</h2>
+                <p className="text-gray-600 text-sm md:text-base mb-4">{urun.description}</p>
                 <div className="space-y-2 mb-6">
                   {urun.features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-gray-600">
-                      <svg className="w-4 h-4 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <div key={index} className="flex items-center text-gray-600 text-sm md:text-base">
+                      <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                       </svg>
                       {feature}
                     </div>
                   ))}
                 </div>
-                <div className="flex space-x-4">
-                  <button className="flex-1 bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors">
+                <div className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-4">
+                  <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors text-sm md:text-base">
                     Detaylı Bilgi
                   </button>
-                  <Link href="/iletisim" className="flex-1 border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 transition-colors text-center">
+                  <Link href="/iletisim" className="w-full border border-green-600 text-green-600 py-2 px-4 rounded-lg hover:bg-green-50 transition-colors text-center text-sm md:text-base">
                     İletişime Geç
                   </Link>
                 </div>

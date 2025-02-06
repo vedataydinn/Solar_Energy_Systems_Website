@@ -4,6 +4,27 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768) // 768px, Tailwind'in md breakpoint'i
+    }
+
+    handleResize() // İlk yükleme kontrolü
+    window.addEventListener('resize', handleResize)
+
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % (slides.length - 2))
+    }, 3000)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      clearInterval(timer)
+    }
+  }, [])
+
   const slides = [
     {
       id: 1,
@@ -37,22 +58,12 @@ export default function Home() {
     },
   ]
 
-  const [currentSlide, setCurrentSlide] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % (slides.length - 2))
-    }, 3000)
-
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <div className="flex flex-col min-h-screen">
       {/* Ana İçerik */}
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="h-[90vh] relative">
+        <section className="h-screen relative">
           {/* Arka plan resmi */}
           <div className="absolute inset-0 z-0">
             <Image
@@ -65,17 +76,17 @@ export default function Home() {
           </div>
 
           {/* Ana sayfa içeriği */}
-          <div className="relative z-10 text-white text-center pt-12">
-            <h1 className="text-6xl font-extrabold mb-4 text-black drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] animate-pulse">
+          <div className="relative z-10 text-white text-center pt-32 md:pt-12">
+            <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-black drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] animate-pulse">
               Güneş Enerjisi Çözümleri
             </h1>
-            <p className="text-2xl mb-8 text-black font-medium drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
+            <p className="text-xl md:text-2xl mb-8 text-black font-medium drop-shadow-[0_1px_1px_rgba(0,0,0,0.6)]">
               Sürdürülebilir ve temiz enerji için doğru adres
             </p>
           </div>
 
           {/* Kayan Ürün Resimleri */}
-          <div className="max-w-7xl mx-auto px-4 overflow-hidden mt-16">
+          <div className="max-w-7xl mx-auto px-4 overflow-hidden mt-32 md:mt-16">
             <div 
               className="flex transition-transform duration-1000 ease-in-out"
               style={{ transform: `translateX(-${currentSlide * 33.33}%)` }}
@@ -83,7 +94,7 @@ export default function Home() {
               {slides.map((slide) => (
                 <div 
                   key={slide.id}
-                  className="min-w-[33.33%] px-4"
+                  className="min-w-[33.33%] px-2"
                 >
                   <div className="group relative overflow-hidden rounded-lg shadow-lg transition-transform duration-300 hover:scale-105">
                     <Image
@@ -91,10 +102,10 @@ export default function Home() {
                       alt={slide.title}
                       width={400}
                       height={600}
-                      className="object-cover w-full h-[350px]"
+                      className="object-cover w-full h-[200px] md:h-[350px]"
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white text-xl font-semibold">{slide.title}</span>
+                      <span className="text-white text-sm md:text-xl font-semibold text-center px-2">{slide.title}</span>
                     </div>
                   </div>
                 </div>
@@ -104,13 +115,13 @@ export default function Home() {
         </section>
 
         {/* İkinci bölüm - Ürün detayları */}
-        <section className="bg-white py-20 px-4">
+        <section className="bg-white py-12 md:py-20 px-4 mt-screen md:mt-0">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">Tüm Ürünlerimiz</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16 text-gray-800">Tüm Ürünlerimiz</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
               {/* Detaylı Ürün 1 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/solar ekipmanlar.jpg"
                     alt="Solar Ekipmanlar"
@@ -119,16 +130,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Solar Ekipmanlar</h3>
-                  <p className="text-gray-600 mb-4">Güneş enerjisi sistemleri için yüksek kaliteli ekipman çözümleri</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Solar Ekipmanlar</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Güneş enerjisi sistemleri için yüksek kaliteli ekipman çözümleri</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 2 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/şarj kontrol cihazları.jpg"
                     alt="Şarj Kontrol Cihazları"
@@ -137,16 +148,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Şarj Kontrol Cihazları</h3>
-                  <p className="text-gray-600 mb-4">Akıllı şarj kontrolü ile sistem verimliliğini maksimuma çıkarın</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Şarj Kontrol Cihazları</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Akıllı şarj kontrolü ile sistem verimliliğini maksimuma çıkarın</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 3 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/ısı pompası.jpg"
                     alt="Isı Pompası"
@@ -155,16 +166,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Isı Pompası</h3>
-                  <p className="text-gray-600 mb-4">Verimli ısıtma ve soğutma için yenilikçi ısı pompası sistemleri</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Isı Pompası</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Verimli ısıtma ve soğutma için yenilikçi ısı pompası sistemleri</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 4 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/dalgıç pompası.jpg"
                     alt="Dalgıç Pompası"
@@ -173,16 +184,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Dalgıç Pompası</h3>
-                  <p className="text-gray-600 mb-4">Güneş enerjili sulama sistemleri için özel dalgıç pompa çözümleri</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Dalgıç Pompası</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Güneş enerjili sulama sistemleri için özel dalgıç pompa çözümleri</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 5 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/aküler.jpg"
                     alt="Aküler"
@@ -191,16 +202,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Aküler</h3>
-                  <p className="text-gray-600 mb-4">Uzun ömürlü ve yüksek performanslı enerji depolama çözümleri</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Aküler</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Uzun ömürlü ve yüksek performanslı enerji depolama çözümleri</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 6 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/inverterler.jpg"
                     alt="İnverterler"
@@ -209,16 +220,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">İnverterler</h3>
-                  <p className="text-gray-600 mb-4">Yüksek verimli ve güvenilir inverter sistemleri</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">İnverterler</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Yüksek verimli ve güvenilir inverter sistemleri</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 7 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/solar ekipmanlar.jpg"
                     alt="Solar Ekipmanlar"
@@ -227,16 +238,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Solar Ekipmanlar</h3>
-                  <p className="text-gray-600 mb-4">Güneş enerjisi sistemleri için profesyonel ekipman çözümleri</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Solar Ekipmanlar</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Güneş enerjisi sistemleri için profesyonel ekipman çözümleri</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 8 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/şarj kontrol cihazları.jpg"
                     alt="Şarj Kontrol Cihazları"
@@ -245,16 +256,16 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Şarj Kontrol Cihazları</h3>
-                  <p className="text-gray-600 mb-4">Akıllı şarj yönetimi ve sistem optimizasyonu</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Şarj Kontrol Cihazları</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Akıllı şarj yönetimi ve sistem optimizasyonu</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
               {/* Detaylı Ürün 9 */}
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                <div className="h-64 overflow-hidden">
+                <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
                     src="/ısı pompası.jpg"
                     alt="Isı Pompası"
@@ -263,10 +274,10 @@ export default function Home() {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">Isı Pompası</h3>
-                  <p className="text-gray-600 mb-4">Enerji tasarruflu ısıtma ve soğutma sistemleri</p>
-                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium">Detaylı Bilgi →</Link>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Isı Pompası</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Enerji tasarruflu ısıtma ve soğutma sistemleri</p>
+                  <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
 
