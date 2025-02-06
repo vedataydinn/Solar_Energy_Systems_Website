@@ -133,7 +133,7 @@ export default function Projeler() {
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-6 text-center">Yaptığımız Projeler</h1>
           <p className="text-xl text-center max-w-3xl mx-auto">
-            Türkiye'nin dört bir yanında başarıyla tamamladığımız güneş enerjisi projelerimiz
+            Türkiye&apos;nin dört bir yanında başarıyla tamamladığımız güneş enerjisi projelerimiz
           </p>
         </div>
       </div>
