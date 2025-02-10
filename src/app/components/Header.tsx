@@ -57,11 +57,11 @@ export default function Header() {
 
             {/* Mobil Navigation */}
             <nav className="flex md:hidden">
-              <ul className="flex space-x-2.5">
+              <ul className="flex space-x-1.5 -ml-1">
                 <li>
                   <Link 
                     href="/" 
-                    className="block bg-green-600 text-white px-3 py-2 rounded hover:bg-yellow-400 hover:text-green-800 hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-green-400 hover:border-yellow-300 shadow-lg hover:shadow-yellow-300/50"
+                    className="block bg-green-600 text-white px-2.5 py-2 rounded hover:bg-yellow-400 hover:text-green-800 hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-green-400 hover:border-yellow-300 shadow-lg hover:shadow-yellow-300/50"
                   >
                     Anasayfa
                   </Link>
@@ -69,7 +69,7 @@ export default function Header() {
                 <li>
                   <Link 
                     href="/urunler" 
-                    className="block bg-green-600 text-white px-3 py-2 rounded hover:bg-yellow-400 hover:text-green-800 hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-green-400 hover:border-yellow-300 shadow-lg hover:shadow-yellow-300/50"
+                    className="block bg-green-600 text-white px-2.5 py-2 rounded hover:bg-yellow-400 hover:text-green-800 hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-green-400 hover:border-yellow-300 shadow-lg hover:shadow-yellow-300/50"
                   >
                     Ürünler
                   </Link>
@@ -77,7 +77,7 @@ export default function Header() {
                 <li>
                   <Link 
                     href="/projeler" 
-                    className="block bg-green-600 text-white px-3 py-2 rounded hover:bg-yellow-400 hover:text-green-800 hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-green-400 hover:border-yellow-300 shadow-lg hover:shadow-yellow-300/50"
+                    className="block bg-green-600 text-white px-2.5 py-2 rounded hover:bg-yellow-400 hover:text-green-800 hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-green-400 hover:border-yellow-300 shadow-lg hover:shadow-yellow-300/50"
                   >
                     Projeler
                   </Link>
@@ -85,7 +85,7 @@ export default function Header() {
                 <li>
                   <Link 
                     href="/iletisim" 
-                    className="block bg-yellow-400 text-green-800 px-3 py-2 rounded hover:bg-green-600 hover:text-white hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-yellow-300 hover:border-green-400 shadow-lg hover:shadow-green-600/50"
+                    className="block bg-yellow-400 text-green-800 px-2.5 py-2 rounded hover:bg-green-600 hover:text-white hover:scale-105 transition-all duration-300 text-xs font-medium text-center border border-yellow-300 hover:border-green-400 shadow-lg hover:shadow-green-600/50"
                   >
                     İletişim
                   </Link>
