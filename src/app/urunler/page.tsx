@@ -8,7 +8,7 @@ const urunler = [
     id: 1,
     title: 'Güneş Paneli',
     description: 'Yüksek verimli ve dayanıklı güneş panelleri',
-    image: '/solar ekipmanlar.jpg',
+    image: '/güneşpanelleri.jpg',
     features: [
       'Yüksek enerji verimliliği',
       'UV ve hava koşullarına dayanıklı',

@@ -267,7 +267,7 @@ export default function Home() {
               <div className="bg-gray-50 rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
                 <div className="h-48 sm:h-56 md:h-64 overflow-hidden">
                   <Image
-                    src="/ısı pompası.jpg"
+                    src="/sürücüler.jpg"
                     alt="Isı Pompası"
                     width={400}
                     height={300}
@@ -275,8 +275,8 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-3 sm:p-4 md:p-6">
-                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Isı Pompası</h3>
-                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Enerji tasarruflu ısıtma ve soğutma sistemleri</p>
+                  <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2">Sürücüler</h3>
+                  <p className="text-gray-600 mb-4 text-sm sm:text-base">Enerji tasarruflu ve yüksek performanslı sürücü sistemleri</p>
                   <Link href="/urunler" className="text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base">Detaylı Bilgi →</Link>
                 </div>
               </div>
