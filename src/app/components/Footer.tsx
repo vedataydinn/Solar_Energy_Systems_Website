@@ -112,7 +112,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-center space-x-3">
                 <FaPhone className="text-green-500" />
-                <span className="text-gray-400">+90 555 123 4567</span>
+                <span className="text-gray-400">+90 530 320 41 54</span>
               </li>
               <li className="flex items-center space-x-3">
                 <FaEnvelope className="text-green-500" />
@@ -120,7 +120,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <FaMapMarkerAlt className="text-green-500" />
-                <span className="text-gray-400">İstanbul, Türkiye</span>
+                <span className="text-gray-400">Elazığ, Türkiye</span>
               </li>
             </ul>
           </div>

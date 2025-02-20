@@ -102,7 +102,7 @@ export default function Iletisim() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-800">Adres</h3>
-                    <p className="text-gray-600">Teknoloji Mahallesi, Güneş Sokak No:123<br />İstanbul, Türkiye</p>
+                    <p className="text-gray-600">Sarayatik, Hacı Hayri Cd., 23100 Merkez/Elazığ<br />Elazığ , Türkiye</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +111,8 @@ export default function Iletisim() {
             {/* Harita */}
             <div className="bg-white rounded-2xl shadow-lg overflow-hidden h-80 transform hover:scale-105 transition-transform duration-300">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d192698.6201976359!2d28.871754966796875!3d41.005495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa7040068086b%3A0xe1ccfe98bc01b0d0!2zxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1710164144811!5m2!1str!2str"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3121.238327136369!2d39.223255!3d38.6706685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzjCsDQwJzE0LjIiTiAzOcKwMTMnMjQuOCJF!5e0!3m2!1str!2str!4v1710164144811!5m2!1str!2str"
+
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

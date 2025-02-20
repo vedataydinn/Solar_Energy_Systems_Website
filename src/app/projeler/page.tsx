@@ -3,6 +3,8 @@
 import Image from 'next/image'
 
 const projeler = [
+  
+  /*
   {
     id: 1,
     title: "Villa Güneş Enerji Sistemi",
@@ -39,7 +41,8 @@ const projeler = [
       "Günlük 200 ton su kapasitesi"
     ]
   },
-  {
+
+    {
     id: 4,
     title: "Otel Güneş Enerjisi",
     description: "100kW Hibrit Sistem",
@@ -63,6 +66,8 @@ const projeler = [
       "Tam otomasyon sistemi"
     ]
   },
+   
+
   {
     id: 6,
     title: "Belediye Aydınlatma",
@@ -123,6 +128,139 @@ const projeler = [
       "Tam bağımsız enerji"
     ]
   }
+
+  */
+  {
+    id: 1,
+    title: "Tarımsal Sulama Projesi",
+    description: "Solar Enerji ile Tarımsal Sulama Sistemi",
+    image: "/proje1.jpg",
+    detaylar: [
+      "Yüksek verimli güneş paneli teknolojisi",
+      "Derin kuyularda kullanılabilen dalgıç pompa",
+      "Otomatik sulama ve su yönetim sistemi",
+      "Uzaktan izleme ve kontrol sistemi"
+    ]
+  },
+  
+  {
+    id: 2,
+    title: "Tarımsal Sulama Projesi",
+    description: "Güneş Enerjisi Destekli Sulama Çözümü",
+    image: "/proje2.jpg",
+    detaylar: [
+      "Yüksek verimli güneş paneli teknolojisi",
+      "Gelişmiş su pompa sistemi",
+      "Otomatik sulama zamanlama ve kontrol",
+      "Verimli su yönetimi için sensör tabanlı sistem"
+    ]
+  },
+  
+  {
+    id: 3,
+    title: "Tarımsal Sulama Projesi",
+    description: "Solar Enerji ile Sürdürülebilir Tarım Sulama",
+    image: "/proje3.jpg",
+    detaylar: [
+      "Güneş enerjisi ile çalışan pompa sistemi",
+      "Akıllı sulama yönetim yazılımı",
+      "Su tasarrufu sağlayan teknolojiler",
+      "Enerji verimliliği artırıcı çözümler"
+    ]
+  },  
+
+
+  {
+    id: 4,
+    title: "On-Grid Çatı Sistemi",
+    description: "On-Grid Solar Enerji Sistemi",
+    image: "/proje4.jpg",
+    detaylar: [
+      "Yüksek verimli güneş paneli teknolojisi",
+      "On-Grid enerji entegrasyonu",
+      "Kesintisiz enerji sağlamak için hibrit sistem",
+      "Enerji verimliliği artırıcı yönetim sistemi"
+    ]
+  },
+  
+  {
+    id: 5,
+    title: "On-Grid Çatı Sistemi",
+    description: "On-Grid Solar Enerji Sistemi",
+    image: "/proje5.jpg",
+    detaylar: [
+      "On-Grid güneş paneli sistemi",
+      "Isı pompası ve enerji entegrasyonu",
+      "Akıllı iklim kontrol ve sulama sistemi",
+      "Tam otomasyon ve uzaktan izleme sistemi"
+    ]
+  },
+  {
+    id: 6,
+    title: "Mobil GES Sistemi",
+    description: "Solar Aydınlatma Sistemi",
+    image: "/proje6.jpg",
+    detaylar: [
+      "Yüksek verimli güneş paneli teknolojisi",
+      "LED aydınlatma sistemi",
+      "Akıllı kontrol ünitesi",
+      "Enerji depolama ve izleme sistemi"
+    ]
+  },
+  
+  {
+    id: 7,
+    title: "Mobil GES Sistemi",
+    description: "Çatı Solar Enerji Sistemi",
+    image: "/proje7.jpg",
+    detaylar: [
+      "On-Grid güneş paneli entegrasyonu",
+      "Merkezi inverter sistemi",
+      "Sıcak su üretim desteği",
+      "Enerji verimliliği artırıcı çözümler"
+    ]
+  },
+  
+  {
+    id: 8,
+    title: "Mobil GES Sistemi",
+    description: "Tam Entegre Solar Enerji Sistemi",
+    image: "/proje8.jpg",
+    detaylar: [
+      "On-Grid güneş paneli sistemi",
+      "Ev otomasyon entegrasyonu",
+      "Akıllı tüketim kontrolü",
+      "Mobil izleme ve yönetim sistemi"
+    ]
+  },
+  
+  {
+    id: 9,
+    title: "Mobil GES Sistemi",
+    description: "Endüstriyel Solar Enerji Sistemi",
+    image: "/proje9.jpg",
+    detaylar: [
+      "Yüksek kapasiteli güneş paneli entegrasyonu",
+      "Çoklu inverter sistemi",
+      "SCADA entegrasyonu",
+      "Endüstriyel enerji yönetim çözümleri"
+    ]
+  },
+  
+  {
+    id: 10,
+    title: "Mobil GES Sistemi",
+    description: "Hibrit Solar Enerji Sistemi",
+    image: "/proje10.jpg",
+    detaylar: [
+      "Yüksek verimli güneş paneli sistemi",
+      "Sulama ve aydınlatma entegrasyonu",
+      "Akü depolama ve enerji yönetim sistemi",
+      "Bağımsız enerji üretim çözümleri"
+    ]
+  }
+  
+  
 ]
 
 export default function Projeler() {
