@@ -1,5 +1,7 @@
 'use client'
 
+
+import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -116,13 +118,26 @@ const urunler = [
 
 export default function Urunler() {
   return (
+
+    <>
+      <Head>
+        <title>Ürünler - Güneşpaneller.com</title>
+        <meta name="description" content="Güneş panelleri ve diğer enerji ürünlerimiz hakkında bilgi edinin." />
+        <meta name="keywords" content="güneş panelleri, güneş enerjisi, yenilenebilir enerji, güneş, panel, gunes, güneş pan" />
+        <meta name="author" content="cengiz yargi" />
+      </Head>
+
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-green-700 text-white py-16">
         <div className="max-w-7xl mx-auto px-4">
           <h1 className="text-5xl font-bold mb-6 text-center">Ürünlerimiz</h1>
           <p className="text-xl text-center max-w-3xl mx-auto">
-            Güneş enerjisi sistemleri için ihtiyacınız olan tüm ürünler tek bir çatı altında.
+
+          
+
+            Güneş enerjisi sistemleri için ihtiyacınız olan ürünler tek bir çatı altında.
+
           </p>
         </div>
       </div>
@@ -185,5 +200,8 @@ export default function Urunler() {
         </div>
       </div>
     </div>
+
+    </>
+
   )
 } 

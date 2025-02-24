@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 
+import Head from 'next/head';
 const projeler = [
   {
     id: 1,
@@ -127,6 +128,14 @@ const projeler = [
 
 export default function Projeler() {
   return (
+
+    <>
+    <Head>
+      <title>Projeler - Güneşpaneller.com</title>
+      <meta name="description" content="Güneş enerjisi projelerimiz hakkında bilgi edinin." />
+      <meta name="keywords" content="projeler, güneş enerjisi, enerji çözümleri" />
+      <meta name="author" content="cengiz yargi" />
+    </Head>
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-green-700 text-white py-16">
@@ -194,5 +203,6 @@ export default function Projeler() {
         </div>
       </div>
     </div>
+    </>
   )
 } 

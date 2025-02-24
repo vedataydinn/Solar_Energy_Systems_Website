@@ -1,4 +1,5 @@
 'use client'
+import Head from 'next/head';
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -59,6 +60,17 @@ export default function Home() {
   ]
 
   return (
+
+
+    <>
+      <Head>
+        <title>Güneş Panelleri - Güneşpaneller.com</title>
+        <meta name="description" content="Güneş panelleri ve enerji çözümleri hakkında bilgi edinin." />
+        <meta name="keywords" content="güneş panelleri, güneş enerjisi, yenilenebilir enerji,güneş enerjisi,güneş,panel,gunes,güneş pan,güneş paneller" />
+        <meta name="author" content="cengiz yargi" />
+      </Head>
+    
+
     <div className="flex flex-col min-h-screen">
       {/* Ana İçerik */}
       <main className="flex-grow">
@@ -363,5 +375,8 @@ export default function Home() {
         </section>
       </main>
     </div>
+
+    </>
+
   )
 }

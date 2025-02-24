@@ -1,135 +1,11 @@
 'use client'
 
+
+import Head from 'next/head';
 import Image from 'next/image'
 
 const projeler = [
   
-  /*
-  {
-    id: 1,
-    title: "Villa Güneş Enerji Sistemi",
-    description: "10kW Çatı Üzeri Güneş Enerji Sistemi",
-    image: "/proje1.jpg",
-    detaylar: [
-      "30 adet yüksek verimli güneş paneli",
-      "Akıllı inverter sistemi",
-      "Uzaktan izleme sistemi",
-      "Yıllık 15.000 kWh üretim"
-    ]
-  },
-  {
-    id: 2,
-    title: "Fabrika Enerji Sistemi",
-    description: "250kW Endüstriyel Güneş Enerji Sistemi",
-    image: "/proje2.jpg",
-    detaylar: [
-      "750 adet güneş paneli",
-      "Merkezi inverter sistemi",
-      "Enerji izleme ve yönetim sistemi",
-      "Yıllık 375.000 kWh üretim"
-    ]
-  },
-  {
-    id: 3,
-    title: "Tarımsal Sulama Projesi",
-    description: "30kW Solar Pompa Sistemi",
-    image: "/proje3.jpg",
-    detaylar: [
-      "90 adet güneş paneli",
-      "Dalgıç pompa sistemi",
-      "Otomatik sulama kontrolü",
-      "Günlük 200 ton su kapasitesi"
-    ]
-  },
-
-    {
-    id: 4,
-    title: "Otel Güneş Enerjisi",
-    description: "100kW Hibrit Sistem",
-    image: "/proje4.jpg",
-    detaylar: [
-      "300 adet güneş paneli",
-      "Akü depolama sistemi",
-      "Kesintisiz enerji",
-      "Yıllık 150.000 kWh üretim"
-    ]
-  },
-  {
-    id: 5,
-    title: "Sera Otomasyon",
-    description: "15kW Akıllı Sera Sistemi",
-    image: "/proje5.jpg",
-    detaylar: [
-      "45 adet güneş paneli",
-      "Isı pompası entegrasyonu",
-      "Akıllı iklim kontrolü",
-      "Tam otomasyon sistemi"
-    ]
-  },
-   
-
-  {
-    id: 6,
-    title: "Belediye Aydınlatma",
-    description: "50kW Solar Aydınlatma Sistemi",
-    image: "/proje6.jpg",
-    detaylar: [
-      "150 adet güneş paneli",
-      "LED aydınlatma sistemi",
-      "Akıllı kontrol ünitesi",
-      "Enerji depolama sistemi"
-    ]
-  },
-  {
-    id: 7,
-    title: "Spor Kompleksi",
-    description: "75kW Çatı GES",
-    image: "/proje7.jpg",
-    detaylar: [
-      "225 adet güneş paneli",
-      "Merkezi inverter sistemi",
-      "Sıcak su desteği",
-      "Yıllık 112.500 kWh üretim"
-    ]
-  },
-  {
-    id: 8,
-    title: "Akıllı Ev Sistemi",
-    description: "5kW Tam Entegre Sistem",
-    image: "/proje8.jpg",
-    detaylar: [
-      "15 adet güneş paneli",
-      "Ev otomasyon entegrasyonu",
-      "Akıllı tüketim kontrolü",
-      "Mobil izleme sistemi"
-    ]
-  },
-  {
-    id: 9,
-    title: "Sanayi Tesisi",
-    description: "500kW Endüstriyel GES",
-    image: "/proje9.jpg",
-    detaylar: [
-      "1500 adet güneş paneli",
-      "Çoklu inverter sistemi",
-      "SCADA entegrasyonu",
-      "Yıllık 750.000 kWh üretim"
-    ]
-  },
-  {
-    id: 10,
-    title: "Çiftlik Projesi",
-    description: "40kW Hibrit Sistem",
-    image: "/proje10.jpg",
-    detaylar: [
-      "120 adet güneş paneli",
-      "Sulama ve aydınlatma",
-      "Akü depolama sistemi",
-      "Tam bağımsız enerji"
-    ]
-  }
-
-  */
   {
     id: 1,
     title: "Tarımsal Sulama Projesi",
@@ -265,6 +141,14 @@ const projeler = [
 
 export default function Projeler() {
   return (
+
+    <>
+    <Head>
+      <title>Projeler - Güneşpaneller.com</title>
+      <meta name="description" content="Güneş enerjisi projelerimiz hakkında bilgi edinin." />
+      <meta name="keywords" content="projeler, güneş enerjisi, enerji çözümleri" />
+      <meta name="author" content="cengiz yargi" />
+    </Head>
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="bg-green-700 text-white py-16">
@@ -332,5 +216,7 @@ export default function Projeler() {
         </div>
       </div>
     </div>
+
+    </>
   )
 } 

@@ -1,10 +1,20 @@
 'use client'
 
 import Image from 'next/image'
+import Head from 'next/head';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa'
+
 
 export default function Iletisim() {
   return (
+    <>
+    <Head>
+      <title>Bize Ulaşın - Güneşpaneller.com</title>
+      <meta name="description" content="Güneş panelleri hakkında bize ulaşın." />
+      <meta name="keywords" content="güneş panelleri, güneş enerjisi, yenilenebilir enerji,güneş enerjisi,güneş,panel,gunes,güneş pan,güneş paneller,gunespaneller" />
+      <meta name="author" content="cengiz yargi" />
+    </Head>
+
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <div className="relative h-[50vh] overflow-hidden">
@@ -33,8 +43,10 @@ export default function Iletisim() {
             <div>
               <h2 className="text-3xl font-bold text-gray-800 mb-6">Hakkımızda</h2>
               <p className="text-gray-600 leading-relaxed">
-                2010 yılından bu yana güneş enerjisi sektöründe faaliyet gösteren firmamız, 
-                sürdürülebilir enerji çözümleri konusunda Türkiye'nin önde gelen şirketlerinden biridir. 
+
+                2012 yılından bu yana güneş enerjisi sektöründe faaliyet gösteren firmamız, 
+                sürdürülebilir enerji çözümleri konusunda Türkiyede faaliyet gösteren şirketlerden biridir. 
+
                 Deneyimli ekibimiz ve kaliteli ürün yelpazemiz ile müşterilerimize en iyi hizmeti 
                 sunmaya devam ediyoruz.
               </p>
@@ -144,5 +156,8 @@ export default function Iletisim() {
         </div>
       </div>
     </div>
+
+    </>
+
   )
 } 
